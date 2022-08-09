@@ -3,7 +3,21 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import api from '../../api/posts';
+import { useState, useEffect } from 'react';
 
+
+// useEffect(() => {
+//   const fetchPosts = async() => {
+//     try {
+//       const response = await api.get('/posts');
+//       setPosts(response.data);
+//     } catch (err) {
+//       console.log('Error!');
+//     }
+//   }
+//   fetchPosts();
+// }, [])
 
 const useStyles = makeStyles({
   root: {
@@ -23,6 +37,10 @@ const useStyles = makeStyles({
 });
 
 export default function SimpleCard() {
+
+
+ const [posts, setPosts] = useState([]);
+  
   const classes = useStyles();
 
 
