@@ -4,6 +4,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import { useStoreContext } from '../../utils/globalstate';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -19,8 +20,11 @@ export default function SimpleSelect() {
   const classes = useStyles();
   const [airport, setAirport] = React.useState('');
 
+  // const { newAirport } = useStoreContext();
+
   const handleChange = (event) => {
     setAirport(event.target.value);
+    // newAirport(event.target.value)
   };
 
   return (
