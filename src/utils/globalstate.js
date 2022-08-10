@@ -1,7 +1,7 @@
 import React, {createContext, useContext, useState} from "react";
 
 const StoreContext = createContext();
-const {Provider} = StoreContext;
+const { Provider } = StoreContext;
 
 const StoreProvider = ({ children }) => {
     const [airport, setAirport] = useState('');
@@ -10,7 +10,7 @@ const StoreProvider = ({ children }) => {
     }
     return <Provider value={{airport, newAirport}}>{children}</Provider>;
 
-}
+};
 
 const useStoreContext = () => {
     return useContext(StoreContext);

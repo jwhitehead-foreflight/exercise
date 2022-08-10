@@ -1,14 +1,16 @@
 import React from 'react';
 import Homepage from './pages/Home';
+import { StoreProvider } from './utils/globalstate';
 
 
 function App() {
 
   return (
+    <StoreProvider>
     <div>
-      <h1>ForeFlight Interview</h1>
       <Homepage/>
     </div>
+    </StoreProvider>
   );
 }
 

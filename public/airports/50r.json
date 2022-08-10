@@ -1,4 +1,4 @@
-{ "data": {
+{ 
   "siteNumberCode": "24231.*a",
   "icao": null,
   "iata": null,
@@ -673,5 +673,4 @@
   "longitudeInDegrees": -97.67241707813793,
   "magneticVariationWestOrEstimate": -7,
   "hardSurfaceAvailable": true
-}
 }

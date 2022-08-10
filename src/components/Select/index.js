@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -18,13 +18,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleSelect() {
   const classes = useStyles();
+
   const [airport, setAirport] = React.useState('');
 
-  // const { newAirport } = useStoreContext();
+  const { newAirport } = useStoreContext();
 
   const handleChange = (event) => {
-    setAirport(event.target.value);
-    // newAirport(event.target.value)
+    //setAirport(event.target.value);
+     newAirport(event.target.value)
   };
 
   return (
@@ -35,8 +36,10 @@ export default function SimpleSelect() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={airport}
+          label="airport"
           onChange={handleChange}
         >
+          <MenuItem value={'NONE'}>NONE</MenuItem>
           <MenuItem value={'50r'}>Lockhart</MenuItem>
           <MenuItem value={'egll'}>London</MenuItem>
           <MenuItem value={'kaus'}>Austin</MenuItem>

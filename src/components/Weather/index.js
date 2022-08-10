@@ -39,7 +39,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SimpleCard() {
+export default function WeatherCard() {
 
 
  const [posts, setPosts] = React.useState([]);
@@ -50,9 +50,13 @@ export default function SimpleCard() {
  
  const newURL = "http://localhost:3000/airports/"+newString+".json"
  const newbaseURL = JSON.stringify(newURL)
-  const baseURL = "http://localhost:3000/airports/50r.json"
+  const baseURL = "http://localhost:3000/weather/50r.json"
  //const baseURL = newbaseURL
+ 
+ 
+ 
  console.log(newbaseURL)
+ 
  console.log(baseURL)
 
  React.useEffect(() => {
@@ -63,27 +67,35 @@ export default function SimpleCard() {
     console.log(posts);
   });
  }, []);
+
+  console.log(posts.report)
   
   const classes = useStyles();
 
 
   return (
     <div>
-
+    
     <Card className={classes.root}>
       <CardContent>
-        <h2>Airport: {posts.name}</h2>
+        <h2>Weather</h2>
         <Typography className={classes.title}  gutterBottom>
-          ICAO: {posts.icao}
+          Temp:
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Available Runways: 
+          Relative Humidity:  
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Latitude: {posts.latitude} 
+          Summary of Cloud Coverage: 
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Longitude: {posts.longitude} 
+          Visibility: 
+        </Typography>
+        <Typography className={classes.title}  gutterBottom>
+          Wind Speed: 
+        </Typography>
+        <Typography className={classes.title}  gutterBottom>
+          Wind Direction: 
         </Typography>
       </CardContent>
      
@@ -91,4 +103,3 @@ export default function SimpleCard() {
     </div>
   );
 }
-
