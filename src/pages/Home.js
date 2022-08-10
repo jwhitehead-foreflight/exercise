@@ -14,7 +14,8 @@ const Homepage = () => {
                 backgroundColor: 'cadetblue',
                 color: 'white',
                 padding: 10,
-                borderRadius: 5
+                borderRadius: 5,
+                
             }}
                 >Foreflight - Airport Information</h1>
         <div>

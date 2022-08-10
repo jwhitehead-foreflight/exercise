@@ -9,19 +9,6 @@ import SimpleSelect from '../Select';
 import { useStoreContext } from '../../utils/globalstate';
 
 
-
-// useEffect(() => {
-//   const fetchPosts = async() => {
-//     try {
-//       const response = await api.get('/posts');
-//       setPosts(response.data);
-//     } catch (err) {
-//       console.log('Error!');
-//     }
-//   }
-//   fetchPosts();
-// }, [])
-
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -45,12 +32,12 @@ export default function SimpleCard() {
  const [posts, setPosts] = React.useState([]);
  const { airport } = useStoreContext();
  console.log(airport);
- const airString = JSON.stringify(airport)
- const newString = JSON.parse(airString)
+//  const airString = JSON.stringify(airport)
+//  const newString = JSON.parse(airString)
  
- const newURL = "http://localhost:3000/airports/"+newString+".json"
+ const newURL = "http://localhost:3000/airports/"+airport+".json"
  const newbaseURL = JSON.stringify(newURL)
-  const baseURL = "http://localhost:3000/airports/50r.json"
+ const baseURL = "http://localhost:3000/airports/50r.json"
  //const baseURL = newbaseURL
  console.log(newbaseURL)
  console.log(baseURL)
@@ -59,8 +46,7 @@ export default function SimpleCard() {
   console.log(baseURL)
   axios.get(baseURL).then((response) => {
     setPosts(response.data)
-    console.log(response.data)
-    console.log(posts);
+
   });
  }, []);
   
@@ -72,18 +58,18 @@ export default function SimpleCard() {
 
     <Card className={classes.root}>
       <CardContent>
-        <h2>Airport: {posts.name}</h2>
+        <h2>Airport: {posts?.name}</h2>
         <Typography className={classes.title}  gutterBottom>
-          ICAO: {posts.icao}
+          ICAO: {posts?.icao}
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Available Runways: 
+          Available Runways: {posts?.runways?.[0]?.ident}
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Latitude: {posts.latitude} 
+          Latitude: {posts?.latitude} 
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Longitude: {posts.longitude} 
+          Longitude: {posts?.longitude} 
         </Typography>
       </CardContent>
      

@@ -45,10 +45,10 @@ export default function WeatherCard() {
  const [posts, setPosts] = React.useState([]);
  const { airport } = useStoreContext();
  console.log(airport);
- const airString = JSON.stringify(airport)
- const newString = JSON.parse(airString)
+//  const airString = JSON.stringify(airport)
+//  const newString = JSON.parse(airString)
  
- const newURL = "http://localhost:3000/airports/"+newString+".json"
+ const newURL = "http://localhost:3000/airports/"+airport+".json"
  const newbaseURL = JSON.stringify(newURL)
   const baseURL = "http://localhost:3000/weather/50r.json"
  //const baseURL = newbaseURL
@@ -80,7 +80,7 @@ export default function WeatherCard() {
       <CardContent>
         <h2>Weather</h2>
         <Typography className={classes.title}  gutterBottom>
-          Temp:
+          Temp: {}
         </Typography>
         <Typography className={classes.title}  gutterBottom>
           Relative Humidity:  
