@@ -32,15 +32,15 @@ export default function SimpleCard() {
  const [posts, setPosts] = React.useState([]);
  
  const { airport } = useStoreContext();
- console.log(airport);
-//  const airString = JSON.stringify(airport)
-//  const newString = JSON.parse(airString)
+
+ const airportString = JSON.stringify(airport)
+ const newString = JSON.parse(airportString)
  
- const newURL = "http://localhost:3000/airports/"+airport+".json"
+ const newURL = "http://localhost:3000/airports/"+newString+".json"
  const newbaseURL = JSON.stringify(newURL)
  const baseURL = "http://localhost:3000/airports/50r.json"
  //const baseURL = newbaseURL
- console.log(newbaseURL)
+ 
  console.log(baseURL)
 
  React.useEffect(() => {

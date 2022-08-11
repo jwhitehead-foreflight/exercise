@@ -16,20 +16,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleSelect(props) {
+export default function SimpleSelect() {
   const classes = useStyles();
 
- 
+  const [airport, setAirport] = React.useState('');
 
-  // const [airport, setAirport] = React.useState('');
+  const { newAirport } = useStoreContext();
 
-  // const { newAirport } = useStoreContext();
-
-  // const handleChange = (event) => {
-
-  //   //setAirport(event.target.value);
-  //   //  newAirport(event.target.value)
-  // };
+  const handleChange = (event) => {
+    //setAirport(event.target.value);
+     newAirport(event.target.value)
+  };
 
   return (
     <div>
@@ -38,11 +35,11 @@ export default function SimpleSelect(props) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          // value={airport}
-          // label="airport"
-          onChange={event => props.onChange(event.target.value)}
+          value={airport}
+          label="airport"
+          onChange={handleChange}
         >
-          <MenuItem value={'none'}>NONE</MenuItem>
+          <MenuItem value={'NONE'}>NONE</MenuItem>
           <MenuItem value={'50r'}>Lockhart</MenuItem>
           <MenuItem value={'egll'}>London</MenuItem>
           <MenuItem value={'kaus'}>Austin</MenuItem>

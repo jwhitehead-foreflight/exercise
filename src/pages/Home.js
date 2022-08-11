@@ -7,8 +7,8 @@ import { Container } from "@material-ui/core";
 
 const Homepage = () => {
 
-    const [airport, setAirport] = React.useState('none');
-    console.log(airport)
+    // const [airport, setAirport] = React.useState('none');
+    // console.log(airport)
 
     return (
         <Container maxWidth="sm">
@@ -24,7 +24,7 @@ const Homepage = () => {
             }}
                 >Foreflight - Airport Information</h1>
         <div>
-        <SimpleSelect onChange={(value) => setAirport(value)} />
+        <SimpleSelect  />
         <SimpleCard/>
         <WeatherCard/>
         </div>

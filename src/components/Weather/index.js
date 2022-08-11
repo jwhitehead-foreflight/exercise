@@ -44,7 +44,7 @@ export default function WeatherCard() {
 
  const [posts, setPosts] = React.useState([]);
  const { airport } = useStoreContext();
- console.log(airport);
+
 //  const airString = JSON.stringify(airport)
 //  const newString = JSON.parse(airString)
  
@@ -55,20 +55,15 @@ export default function WeatherCard() {
  
  
  
- console.log(newbaseURL)
- 
- console.log(baseURL)
 
  React.useEffect(() => {
-  console.log(baseURL)
   axios.get(baseURL).then((response) => {
     setPosts(response.data)
-    console.log(response.data)
-    console.log(posts);
+
   });
  }, []);
 
-  console.log(posts.report)
+
 
   
   const classes = useStyles();
@@ -81,7 +76,7 @@ export default function WeatherCard() {
       <CardContent>
         <h2>Weather</h2>
         <Typography className={classes.title}  gutterBottom>
-          Temp: {posts?.report?.mos?.forecast?.conditions?.[0]?.tempMinC}
+          Temp: {posts?.report?.mos?.forecast?.conditions?.[0]?.tempMinC} *C
         </Typography>
         <Typography className={classes.title}  gutterBottom>
           Relative Humidity: {posts?.report?.forecast?.conditions?.[0]?.relativeHumidity} 
