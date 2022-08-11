@@ -8,6 +8,7 @@ function App() {
   return (
     <StoreProvider>
     <div>
+
       <Homepage/>
     </div>
     </StoreProvider>

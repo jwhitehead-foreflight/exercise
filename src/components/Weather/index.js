@@ -69,6 +69,7 @@ export default function WeatherCard() {
  }, []);
 
   console.log(posts.report)
+
   
   const classes = useStyles();
 
@@ -80,22 +81,22 @@ export default function WeatherCard() {
       <CardContent>
         <h2>Weather</h2>
         <Typography className={classes.title}  gutterBottom>
-          Temp: {}
+          Temp: {posts?.report?.mos?.forecast?.conditions?.[0]?.tempMinC}
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Relative Humidity:  
+          Relative Humidity: {posts?.report?.forecast?.conditions?.[0]?.relativeHumidity} 
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Summary of Cloud Coverage: 
+          Summary of Cloud Coverage: {posts?.report?.forecast?.conditions?.[0]?.cloudLayers?.[0]?.coverage}
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Visibility: 
+          Visibility (Statute Miles): {posts?.report?.forecast?.conditions?.[0]?.visibility?.distanceSm} 
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Wind Speed: 
+          Wind Speed: {posts?.report?.forecast?.conditions?.[0]?.wind?.speedKts}
         </Typography>
         <Typography className={classes.title}  gutterBottom>
-          Wind Direction: 
+          Wind Direction: {posts?.report?.forecast?.conditions?.[0]?.wind?.direction}
         </Typography>
       </CardContent>
      

@@ -30,6 +30,7 @@ export default function SimpleCard() {
 
 
  const [posts, setPosts] = React.useState([]);
+ 
  const { airport } = useStoreContext();
  console.log(airport);
 //  const airString = JSON.stringify(airport)
@@ -77,4 +78,3 @@ export default function SimpleCard() {
     </div>
   );
 }
-
