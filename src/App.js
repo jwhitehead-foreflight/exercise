@@ -1,17 +1,35 @@
 import React from 'react';
-import Homepage from './pages/Home';
-import { StoreProvider } from './utils/globalstate';
+import SimpleCard from './components/Card';
+import SimpleSelect from './components/Select';
+import WeatherCard from './components/Weather';
+import { Container } from '@material-ui/core';
+import { useState } from 'react';
+
 
 
 function App() {
 
-  return (
-    <StoreProvider>
-    <div>
+  const [airport, setAirport] = useState('');
 
-      <Homepage/>
+  return (
+    <Container maxWidth="sm">
+        <h1 style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: 'cadetblue',
+            color: 'white',
+            padding: 10,
+            borderRadius: 5,
+            
+        }}
+            >Foreflight - Airport Information</h1>
+    <div>
+    <SimpleSelect onChange={value => setAirport(value)} />
+    <SimpleCard airport={airport}/>
+    <WeatherCard airport={airport}/>
     </div>
-    </StoreProvider>
+    </Container>
   );
 }
 

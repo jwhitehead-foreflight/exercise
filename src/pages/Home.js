@@ -1,35 +1,35 @@
-import React from "react";
-import { useState } from "react";
-import SimpleCard from "../components/Card";
-import SimpleSelect from "../components/Select";
-import WeatherCard from "../components/Weather";
-import { Container } from "@material-ui/core";
+// import React from "react";
+// import { useState } from "react";
+// import SimpleCard from "../components/Card";
+// import SimpleSelect from "../components/Select";
+// import WeatherCard from "../components/Weather";
+// import { Container } from "@material-ui/core";
 
-const Homepage = () => {
+// const Homepage = () => {
 
-    // const [airport, setAirport] = React.useState('none');
-    // console.log(airport)
+//     // const [airport, setAirport] = React.useState('none');
+//     // console.log(airport)
 
-    return (
-        <Container maxWidth="sm">
-            <h1 style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: 'cadetblue',
-                color: 'white',
-                padding: 10,
-                borderRadius: 5,
+//     return (
+//         <Container maxWidth="sm">
+//             <h1 style={{
+//                 display: 'flex',
+//                 justifyContent: 'center',
+//                 alignItems: 'center',
+//                 backgroundColor: 'cadetblue',
+//                 color: 'white',
+//                 padding: 10,
+//                 borderRadius: 5,
                 
-            }}
-                >Foreflight - Airport Information</h1>
-        <div>
-        <SimpleSelect  />
-        <SimpleCard/>
-        <WeatherCard/>
-        </div>
-        </Container>
-    )
-};
+//             }}
+//                 >Foreflight - Airport Information</h1>
+//         <div>
+//         <SimpleSelect  />
+//         <SimpleCard/>
+//         <WeatherCard/>
+//         </div>
+//         </Container>
+//     )
+// };
 
-export default Homepage;
+// export default Homepage;

@@ -3,10 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { useState } from 'react';
 import axios from "axios";
-import SimpleSelect from '../Select';
-import { useStoreContext } from '../../utils/globalstate';
+
+
 
 
 const useStyles = makeStyles({
@@ -26,30 +25,22 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SimpleCard() {
+export default function SimpleCard(props) {
 
+ const airport = props.airport;
+console.log(airport)
 
  const [posts, setPosts] = React.useState([]);
  
- const { airport } = useStoreContext();
-
- const airportString = JSON.stringify(airport)
- const newString = JSON.parse(airportString)
- 
- const newURL = "http://localhost:3000/airports/"+newString+".json"
- const newbaseURL = JSON.stringify(newURL)
  const baseURL = "http://localhost:3000/airports/50r.json"
- //const baseURL = newbaseURL
- 
- console.log(baseURL)
 
  React.useEffect(() => {
-  console.log(baseURL)
-  axios.get(baseURL).then((response) => {
+  axios.get(baseURL)
+  .then((response) => {
     setPosts(response.data)
 
   });
- }, []);
+ }, [airport]);
   
   const classes = useStyles();
 
