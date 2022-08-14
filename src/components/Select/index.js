@@ -40,7 +40,7 @@ export default function SimpleSelect() {
           onChange={handleChange}
         >
           <MenuItem value={'NONE'}>NONE</MenuItem>
-          <MenuItem value={'50r'}>Lockhart</MenuItem>
+          <MenuItem value={'50r.json'}>Lockhart</MenuItem>
           <MenuItem value={'egll'}>London</MenuItem>
           <MenuItem value={'kaus'}>Austin</MenuItem>
           <MenuItem value={'khou'}>Houston</MenuItem>

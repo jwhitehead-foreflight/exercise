@@ -33,23 +33,31 @@ export default function SimpleCard() {
  
  const { airport } = useStoreContext();
 
- const airportString = JSON.stringify(airport)
- const newString = JSON.parse(airportString)
+console.log(airport)
+  const airportString = JSON.stringify(airport)
+//  const newString = JSON.parse(airportString)
  
- const newURL = "http://localhost:3000/airports/"+newString+".json"
- const newbaseURL = JSON.stringify(newURL)
- const baseURL = "http://localhost:3000/airports/50r.json"
- //const baseURL = newbaseURL
+//  const newURL = "http://localhost:3000/airports/"+newString+".json"
+//  const newbaseURL = JSON.stringify(newURL)
+//  //const baseURL = "http://localhost:3000/airports/50r.json"
+//  const baseURL = newbaseURL
  
- console.log(baseURL)
+//  console.log(baseURL)
 
- React.useEffect(() => {
-  console.log(baseURL)
-  axios.get(baseURL).then((response) => {
+React.useEffect(() => {
+  axios.get('http://localhost:3000/airports/50r.json')
+  .then((response) => {
     setPosts(response.data)
-
   });
- }, []);
+ }, [airportString]);
+
+//  React.useEffect(() => {
+  
+//   axios.get('http://localhost:3000/airports/', {params:{airport}})
+//   .then((response) => {
+//     setPosts(response.data)
+//   });
+//  }, [airportString]);
   
   const classes = useStyles();
 
