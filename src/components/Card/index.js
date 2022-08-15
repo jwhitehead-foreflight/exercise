@@ -6,8 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import axios from "axios";
 
 
-
-
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
